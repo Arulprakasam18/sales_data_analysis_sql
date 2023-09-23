@@ -1,107 +1,91 @@
-# sales_data_analysis_sql
-Walmart-Sales-Data-Analysis-SQL-Project
-# Project Description
-This SQL project aims to utilize the Walmart Sales data to gain insights into various aspects, including top-performing branches and products, sales trends across different products, and customer behavior. The primary objective is to analyze the data using SQL queries and identify opportunities for improving and optimizing sales strategies.
+# Walmart Sales Data Analysis with SQL
 
-#  Data Dictionary
-This dataset contains sales transactions from three different branches of Walmart, respectively located in Mandalay, Yangon and Naypyitaw. The data contains 17 columns and 1000 rows:
+## Project Description
 
-Column	                       Description	             Data Type
-invoice_id	        Invoice of the sales made	           VARCHAR(30)
-branch	           Branch at which sales were made	     VARCHAR(5)
-city	             The location of the branch	           VARCHAR(30)
-customer_type     The type of the customer	             VARCHAR(30)
-gender	          Gender of the customer making purchase VARCHAR(10)
-product_line	     set of related products	             VARCHAR(100)
-unit_price	       The price of each product	           DECIMAL(10, 2)
-quantity	         The amount of the product sold	       INT
-VAT	               The amount of tax on the purchase	   FLOAT(6, 4)
-Revenue	          The total cost of the purchase (sales) DECIMAL(10, 2)
-date	            The date on which the purchase was made	DATETIME
-time	            The time at which the purchase was made	TIME
-payment_method	  The total amount paid	                  DECIMAL(10, 2)
-cogs	            Cost Of Goods sold	                    DECIMAL(10, 2)
-Profit	          Net Income	                            DECIMAL(10, 2)
-Profit Margin	    percentage of Profit	                  FLOAT(11, 9)
-rating	          Rating	                                FLOAT(2, 1)
+This project focuses on leveraging Walmart sales data to gain valuable insights into various aspects, including top-performing branches and products, sales trends across different products, and customer behavior. The primary objective is to analyze the data using SQL queries and identify opportunities for improving and optimizing sales strategies.
 
-# Methodology
-# Data Understanding:
+## Data Dictionary
 
-Familiarized with dataset structure, columns, data types, and data dictionary.
-Identified specific business questions or objectives.
-# Data Assessment:
+The dataset contains sales transactions from three different branches of Walmart, located in Mandalay, Yangon, and Naypyitaw. The dataset comprises 17 columns and 1000 rows, with the following data types:
 
-Evaluated data quality and structure for issues like missing values, outliers, and formatting inconsistencies.
-# Data Cleaning and Preprocessing:
+| Column           | Description                                  | Data Type      |
+|------------------|----------------------------------------------|----------------|
+| invoice_id       | Invoice of the sales made                   | VARCHAR(30)    |
+| branch           | Branch where sales were made                | VARCHAR(5)     |
+| city             | Location of the branch                      | VARCHAR(30)    |
+| customer_type    | Customer type                                | VARCHAR(30)    |
+| gender           | Gender of the customer making a purchase    | VARCHAR(10)    |
+| product_line     | Set of related products                     | VARCHAR(100)   |
+| unit_price       | Price of each product                       | DECIMAL(10, 2) |
+| quantity         | Amount of the product sold                  | INT            |
+| VAT              | Amount of tax on the purchase               | FLOAT(6, 4)    |
+| Revenue          | Total cost of the purchase (sales)          | DECIMAL(10, 2) |
+| date             | Date of the purchase                        | DATETIME       |
+| time             | Time of the purchase                        | TIME           |
+| payment_method   | Payment method                               | DECIMAL(10, 2) |
+| cogs             | Cost Of Goods Sold (COGS)                   | DECIMAL(10, 2) |
+| Profit           | Net Income                                  | DECIMAL(10, 2) |
+| Profit Margin    | Percentage of Profit                        | FLOAT(11, 9)   |
+| rating           | Rating                                      | FLOAT(2, 1)    |
 
-Implemented constraints on the data, including the use of a Primary Key constraint to ensure uniqueness, data integrity, and data consistency.
-Specified appropriate data types for columns to ensure accurate storage and manipulation of data.
-Applied NOT NULL constraints on specific columns to enforce the requirement that they must have non-null values. This ensures data completeness and prevents the insertion of null values in those columns.
-# Feature Engineering:
+## Methodology
 
-Created new variables and features from existing data that provided additional insights, such as:
-created a column called time_of_day to capture sales patterns in the Morning, Afternoon, and Evening. This information will help determine the peak sales periods during the day.
-created a column named day_nameto extract the specific day of the week when each transaction occurred (Mon, Tue, Wed, Thur, Fri). This data will aid in understanding the busiest days for each branch.
-created a column named month_name to extract the month of the year for each transaction (Jan, Feb, Mar). This data will assist in identifying the months with the highest sales and profitability.
-# Exploratory Data Analysis (EDA):
-Some of the business questions I've answered based on the data:
+### Data Understanding:
 
-# Generic Questions
-How many unique cities does the data have?
-In which city is each branch?
-# Product related Questions
-How many unique product lines are included in the data?
-Which payment method is the most frequently used?
-Which product line has the highest sales volume?
-What is the total revenue for each month?
-Which month had the highest Cost of Goods Sold (COGS)?
-Which product line generated the highest revenue?
-Which city had the highest revenue?
-Which product line had the highest Value Added Tax (VAT)?
-For each product line, add a column indicating whether it has "Good" or "Bad" sales, based on whether its sales are above or below the average.
-Which branch sold more products than the average number of products sold?
-What is the most common product line based on gender?
-What is the average rating for each product line?
-# Sales related Questions
-How many sales were made during each time of the day for each weekday?
-Which customer type generates the highest revenue?
-Which city has the highest tax percentage or VAT (Value Added Tax)?
-Among the customer types, which one pays the highest amount in VAT?
-# Customer related Questions
-How many distinct customer types are represented in the data?
-How many unique payment methods are available in the data?
-Which customer type generates the highest revenue?
-Which customer type has the highest total sales?
-What is the predominant gender among the customers?
-How is the gender distributed across branches?
-During which time of the day do customers provide the most ratings?
-During which time of the day do customers provide the most ratings for each branch?
-Which day of the week has the highest average ratings overall?
-Which day of the week has the highest average ratings for each branch?
-# Analysis Approach
-  # Product Analysis:
+- Explored the dataset's structure, columns, data types, and data dictionary.
+- Defined specific business questions and objectives.
 
-Utilized SQL to conduct in-depth analysis of product lines to identify top-performing and underperforming segments.
-Identified areas for improvement within each product line.
-# Sales Analysis:
+### Data Assessment:
 
-Leveraged SQL to analyze sales trends, providing insights into product performance and effectiveness of sales strategies.
-Implemented SQL queries to measure the impact of different sales strategies and recommend modifications for increased sales.
-# Customer Analysis:
+- Evaluated data quality, identifying issues such as missing values, outliers, and formatting inconsistencies.
 
-Uncovered customer segments and their purchasing patterns.
-Utilized SQL queries to extract actionable insights, enabling targeted marketing efforts and optimizing customer satisfaction.
-Revenue And Profit Calculations
-COGS = unitsPrice * quantity
+### Data Cleaning and Preprocessing:
 
-VAT = 5% * COGS
+- Implemented constraints, including Primary Key constraints, to ensure data integrity and consistency.
+- Specified appropriate data types for accurate storage and manipulation.
+- Applied NOT NULL constraints to enforce data completeness.
 
-VAT is added to the 
- and this is what is billed to the customer.
+### Feature Engineering:
 
-Revenue = VAT + COGS
+- Created new variables and features:
+  - `time_of_day`: Captures sales patterns in the Morning, Afternoon, and Evening.
+  - `day_name`: Extracts the specific day of the week for each transaction.
+  - `month_name`: Extracts the month of the year for each transaction.
 
-Profit = revenue - COGS
+### Exploratory Data Analysis (EDA):
 
-Profit Margin % = (total profit/ total revenue)*100
+Answered various business questions, including:
+
+- Identifying unique cities in the data.
+- Determining branch locations.
+- Analyzing product lines and payment methods.
+- Investigating sales volumes, revenues, and profitability.
+- Assessing tax percentages and VAT.
+- Analyzing customer types, gender distribution, and ratings.
+
+## Analysis Approach
+
+### Product Analysis:
+
+- Utilized SQL to conduct in-depth analysis of product lines to identify top-performing and underperforming segments.
+- Identified areas for improvement within each product line.
+
+### Sales Analysis:
+
+- Leveraged SQL to analyze sales trends and assess the effectiveness of sales strategies.
+- Measured the impact of different sales strategies and recommended modifications for increased sales.
+
+### Customer Analysis:
+
+- Uncovered customer segments and purchasing patterns.
+- Extracted actionable insights using SQL queries to optimize customer satisfaction and target marketing efforts.
+
+## Revenue and Profit Calculations
+
+- Cost Of Goods Sold (COGS) = unitPrice * quantity
+- VAT = 5% * COGS
+- Revenue = VAT + COGS
+- Profit = Revenue - COGS
+- Profit Margin % = (total profit / total revenue) * 100
+
+This project report outlines the comprehensive analysis of Walmart's sales data using SQL, providing valuable insights and recommendations for optimizing sales strategies and improving business performance.
