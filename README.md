@@ -6,24 +6,25 @@ This SQL project aims to utilize the Walmart Sales data to gain insights into va
 #  Data Dictionary
 This dataset contains sales transactions from three different branches of Walmart, respectively located in Mandalay, Yangon and Naypyitaw. The data contains 17 columns and 1000 rows:
 
-Column	Description	Data Type
-invoice_id	Invoice of the sales made	VARCHAR(30)
-branch	Branch at which sales were made	VARCHAR(5)
-city	The location of the branch	VARCHAR(30)
-customer_type	The type of the customer	VARCHAR(30)
-gender	Gender of the customer making purchase	VARCHAR(10)
-product_line	set of related products	VARCHAR(100)
-unit_price	The price of each product	DECIMAL(10, 2)
-quantity	The amount of the product sold	INT
-VAT	The amount of tax on the purchase	FLOAT(6, 4)
-Revenue	The total cost of the purchase (sales)	DECIMAL(10, 2)
-date	The date on which the purchase was made	DATETIME
-time	The time at which the purchase was made	TIME
-payment_method	The total amount paid	DECIMAL(10, 2)
-cogs	Cost Of Goods sold	DECIMAL(10, 2)
-Profit	Net Income	DECIMAL(10, 2)
-Profit Margin	percentage of Profit	FLOAT(11, 9)
-rating	Rating	FLOAT(2, 1)
+Column	                       Description	             Data Type
+invoice_id	        Invoice of the sales made	           VARCHAR(30)
+branch	           Branch at which sales were made	     VARCHAR(5)
+city	             The location of the branch	           VARCHAR(30)
+customer_type     The type of the customer	             VARCHAR(30)
+gender	          Gender of the customer making purchase VARCHAR(10)
+product_line	     set of related products	             VARCHAR(100)
+unit_price	       The price of each product	           DECIMAL(10, 2)
+quantity	         The amount of the product sold	       INT
+VAT	               The amount of tax on the purchase	   FLOAT(6, 4)
+Revenue	          The total cost of the purchase (sales) DECIMAL(10, 2)
+date	            The date on which the purchase was made	DATETIME
+time	            The time at which the purchase was made	TIME
+payment_method	  The total amount paid	                  DECIMAL(10, 2)
+cogs	            Cost Of Goods sold	                    DECIMAL(10, 2)
+Profit	          Net Income	                            DECIMAL(10, 2)
+Profit Margin	    percentage of Profit	                  FLOAT(11, 9)
+rating	          Rating	                                FLOAT(2, 1)
+
 # Methodology
 # Data Understanding:
 
